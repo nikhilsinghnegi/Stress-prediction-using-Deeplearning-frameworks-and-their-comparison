@@ -1,2 +1,3 @@
 # Stress-prediction-using-Deeplearning-frameworks-and-their-comparison
-here we are doing stress prediction using deep learning frameworks and compare them. These frameworks are DiNN (difference based neural networl), StressNet and SCSNet (single channel stress network).
+Here we are doing stress prediction using deep learning frameworks and compare them. These frameworks are DiNN (difference based neural networl), StressNet and SCSNet (single channel stress network).
+First the data is uploaded from the gdrive folder. Then the data preprocessing happens. After setting up the different neural network blocks and the desired neural network architecture, we will train and test these network. And comapre their loss and error rates after 150 epochs. (here only 1000 data samples are taken for the NN training and testing).
