@@ -1,0 +1,47 @@
+
+*HEADING
+**
+*INCLUDE, INPUT=plate_with_circular_cutout_1.inp
+**
+** MATERIALS
+*MATERIAL, NAME=POLYMER
+*ELASTIC, TYPE=ISOTROPIC
+                 3200.,                      0.31
+**
+** SECTION DATA
+*SOLID SECTION, ELSET=Set1, MATERIAL=POLYMER
+                      1.,
+**
+** EQUATION CONSTRIANT
+*EQUATION
+2
+Upper_Side, 2, 1.0, MPC1, 2, -1.0
+**
+2
+Right_Side, 1, 1.0, MPC2, 1, -1.0
+** STEPS
+** STEP 1
+*STEP, NAME=Anonymous STEP 1
+STEP 1.) APPLY PRESCRIBED LOADS
+** SOLVING METHOD
+*STATIC
+                     0.5,                       1.
+**
+** BOUNDARY
+*BOUNDARY, TYPE=DISPLACEMENT
+Bottom_Side,        2,        6,            ,          0.
+*BOUNDARY, TYPE=DISPLACEMENT
+MPC1,               2,         ,     -0.0001,          1
+*BOUNDARY, TYPE=DISPLACEMENT
+Left_Side,          1,         ,            ,          0.
+**
+*OUTPUT, FIELD, TIME INTERVAL=1.
+*ELEMENT OUTPUT, POSITION=AVERAGED AT NODES
+S,
+*NODE OUTPUT
+RF,
+U,
+*EL PRINT, FREQUENCY=0
+S,
+*END STEP
+
